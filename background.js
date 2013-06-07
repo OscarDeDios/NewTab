@@ -69,7 +69,8 @@ function esExtensionNewtab(nombre)
         'Mysites - the best speed dial and start page',
         'Speed Dial (ru)',
         'Start!',
-        'New Tab Feeder Beta'
+        'New Tab Feeder Beta',
+        'Modern New Tab Page'
     ];
 
     return extensionNewtab.indexOf(nombre) > -1
