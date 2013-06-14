@@ -1,6 +1,10 @@
 var extensionesApagadas = new Array();
 
 chrome.browserAction.onClicked.addListener(function() {
+
+    chrome.tabs.create({'url': 'chrome-internal://newtab/'});
+
+/*  // code before I know about chrome-internal://newtab/  !!!
     chrome.management.getAll(function(result){
          for (var i=0;i<result.length;i++)
          {
@@ -18,13 +22,13 @@ chrome.browserAction.onClicked.addListener(function() {
             }
             extensionesApagadas = [];
         });
-    });
+   });*/
 });
 
 
 
 
-
+/*
 function esExtensionNewtab(nombre)
 {
     var extensionNewtab = [
@@ -76,6 +80,6 @@ function esExtensionNewtab(nombre)
     return extensionNewtab.indexOf(nombre) > -1
 }
 
-
+*/
 
 
