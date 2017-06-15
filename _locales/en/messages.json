@@ -1,6 +1,6 @@
 {
-"extDesc" : {
-	"message": "Opens the original Chrome \"New Tab\"",
-	"description": "Descripción"
-}
+   "extDesc": {
+      "description": "Descripción",
+      "message": "Opens the original Chrome™ \"New Tab\""
+   }
 }
