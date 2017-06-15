@@ -1,31 +1,31 @@
 var extensionesApagadas = new Array();
 
 chrome.browserAction.onClicked.addListener(function() {
-    chrome.tabs.create({'url': 'chrome-internal://newtab/'});
+    chrome.tabs.create({'url': 'chrome-search://local-ntp/local-ntp.html'});
 
-    chrome.management.getAll(function(result){
-         for (var i=0;i<result.length;i++)
-         {
-            if (esExtensionNewtab(result[i].id) && result[i].enabled)
-            {
-                chrome.management.setEnabled(result[i].id, false);
-                extensionesApagadas.push(result[i].id);
-            }
+    // chrome.management.getAll(function(result){
+    //      for (var i=0;i<result.length;i++)
+    //      {
+    //         if (esExtensionNewtab(result[i].id) && result[i].enabled)
+    //         {
+    //             chrome.management.setEnabled(result[i].id, false);
+    //             extensionesApagadas.push(result[i].id);
+    //         }
 
-        }
-        //chrome.tabs.create({'url': 'chrome://newtab/'}, function(tab) {
-        chrome.tabs.create({'url': 'https://www.google.es/_/chrome/newtab'}, function(tab) {
-            chrome.tabs.executeScript({
-                file: 'inject.js'
-        });
+    //     }
+    //     //chrome.tabs.create({'url': 'chrome://newtab/'}, function(tab) {
+    //     chrome.tabs.create({'url': 'https://www.google.es/_/chrome/newtab'}, function(tab) {
+    //         chrome.tabs.executeScript({
+    //             file: 'inject.js'
+    //         });
 
-            for (var i=0;i<extensionesApagadas.length;i++)
-            {
-                chrome.management.setEnabled(extensionesApagadas[i], true);
-            }
-            extensionesApagadas = [];
-        });
-    });
+    //         for (var i=0;i<extensionesApagadas.length;i++)
+    //         {
+    //             chrome.management.setEnabled(extensionesApagadas[i], true);
+    //         }
+    //         extensionesApagadas = [];
+    //     });
+    // });
 });
 
 
